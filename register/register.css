@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'pricedow';
-    src: url('fonts/pricedow.ttf') format('truetype'); 
+    src: url('../fonts/pricedow.ttf') format('truetype'); 
     font-weight: normal; 
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'Cybrpnuk2';
-    src: url('fonts/Cybrpnuk2.ttf') format('truetype'); 
+    src: url('../fonts/Cybrpnuk2.ttf') format('truetype'); 
     font-weight: normal; 
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'Poppins-Black';
-    src: url('fonts/Poppins-Black.woff2') format('woff2'); 
+    src: url('../fonts/Poppins-Black.woff2') format('woff2'); 
     font-weight: normal; 
     font-style: normal; 
 }
@@ -27,7 +27,6 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #7b0a2a;
-    font-family: "Times New Roman";
     position: relative;
 }
 
@@ -38,7 +37,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    margin-left: 60px;
+    margin-left: 700px;
     margin-top: 40px;
 }
 
@@ -52,19 +51,18 @@ body {
 }
 
 .character-overlay {
-    width: 800px;
+    width: 970px;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    margin-left: 180px;
+    margin-left: 545px;
 }
 
-
-.login-container {
+.regis-container {
     position: absolute; 
-    right: 120px; 
+    left: 120px; 
     top: 50%;
     transform: translateY(-50%); /* Tengah vertikal */
     width: 400px; /* Lebar tetap */
@@ -80,11 +78,12 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 5px;
-    font-size: 66px;
-    font-family: "pricedow";
+    font-size: 60px;
+    font-family: 'pricedow';
     color: black;
     -webkit-text-stroke: 1px white;
 }
+
 
 .subtitle {
     text-align: center;
@@ -177,19 +176,14 @@ h1 {
     transform: translateY(3px);
 }
 
-.register-text {
+.login-text {
     text-align: center;
     margin-top: 15px;
     font-size: 14px;
 }
 
-.register-text a {
+.login-text a {
     color: #8B0000;
     text-decoration: none;
     text-align: center;
-}
-
-.gta-image{
-    margin-left: 120px;
-    width: 500px;
 }

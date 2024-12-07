@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>s
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -43,12 +43,9 @@
             <button type="submit" class="login-btn">LOGIN</button>
 
             <p class="register-text">
-                Don't Have Account? <a href="#">Register Here</a> 
+                Don't Have Account? <a href="register/register.php">Register Here</a> 
             </p>
         </form>
     </div>
-
-    <?php
-    
 </body>
 </html>
