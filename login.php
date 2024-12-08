@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
 
         $sql = "SELECT * FROM users WHERE username = ? OR email = ?";
-        $stmt = $pdo->prepare($sql); // Use $pdo instead of $conn
+        $stmt = $pdo->prepare($sql); 
         $stmt->execute([$username_email, $username_email]);
         $user = $stmt->fetch();
 
