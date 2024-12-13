@@ -46,18 +46,19 @@
 
         <section class="garage-section">
             <div class="container">
-            <div class="item">
-                <img src="../img/garage.png" alt="Garage">
-            <div class="overlay">
-                <a href="garage.html" target="_blank"><h2>Garage</h2></a>
+                <a href="garage.php" class="item">
+                    <img src="../img/garage.png" alt="Garage">
+                    <div class="overlay">
+                        <h2>Garage</h2>
+                    </div>
+                </a>
+                <a href="weapon.php" class="item">
+                    <img src="../img/garage.png" alt="Weapon">
+                    <div class="overlay">
+                        <h2>Weapon</h2>
+                    </div>
+                </a>
             </div>
-            </div>
-        <div class="item">
-            <img src="../img/weapon.png" alt="Weapon">
-            <div class="overlay">
-                <a href="weapon.html" target="_blank"><h2>Weapon</h2></a>
-            </div>
-        </div>
         </section>
         <div class="dark-overlay">
             
