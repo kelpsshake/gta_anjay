@@ -168,7 +168,8 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background-color: #555;
+    text-decoration: underline; /* Menambahkan underline */
+    text-decoration-color: #FFA600;
 }
 
 /* Tampilkan dropdown menu saat hover */

@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="story.css">
 </head>
 <body>
-        <div class="story-section1">
-            <p class="title">Francis INTL. Airport, <br>Liberty City, 1992.</p>
-            <img src="../img/gta.gif" alt="Airport" class="story-gif">
-            <p style="text-align: center;">CJ kembali ke Los Santos setelah ibunya, Beverly Johnson, dibunuh oleh geng saingan.</p>
-        </div>
+<div class="story-section1 fade-in">
+        <p class="title">Francis INTL. Airport, <br>Liberty City, 1992.</p>
+        <img src="../img/gta.gif" alt="Airport" class="story-gif fade-in">
+        <p class="fade-in" style="text-align: center;">CJ kembali ke Los Santos setelah ibunya, Beverly Johnson, dibunuh oleh geng saingan.</p>
+    </div>
 
-        <div class="story-section"  style="text-align: justify;">
-            <img src="../img/police.png" alt="Police" class="story-image">
-            <p>Setibanya di bandara, CJ langsung dihadang oleh polisi korup, Officer Frank Tenpenny dan rekannya Eddie Pulaski, yang menjebaknya dengan tuduhan pembunuhan.</p>
-        </div>
+    <div class="story-section fade-in" style="text-align: justify;">
+        <img src="../img/police.png" alt="Police" class="story-image">
+        <p>Setibanya di bandara, CJ langsung dihadang oleh polisi korup, Officer Frank Tenpenny dan rekannya Eddie Pulaski, yang menjebaknya dengan tuduhan pembunuhan.</p>
+    </div>
 
-        <div class="story-section"  style="text-align: justify;">
-            <img src="../img/gang.png" alt="Gang" class="story-image">
-            <p>CJ kemudian bertemu kembali dengan keluarganya, Sweet & Kendl, serta anggota geng lama Grove Street Families seperti Ryder dan Big Smoke. Dia segera menyadari bahwa geng mereka telah melemah akibat persaingan dengan kelompok lain, terutama geng Ballas.</p>
-        </div>
+    <div class="story-section fade-in" style="text-align: justify;">
+        <img src="../img/gang.png" alt="Gang" class="story-image">
+        <p>CJ kemudian bertemu kembali dengan keluarganya, Sweet & Kendl, serta anggota geng lama Grove Street Families seperti Ryder dan Big Smoke. Dia segera menyadari bahwa geng mereka telah melemah akibat persaingan dengan kelompok lain, terutama geng Ballas.</p>
+    </div>
+    CJ bergabung kembali dengan geng dan membantu Sweet merebut wilayah dari Ballas dengan menyerang markas mereka dan menyabotase operasi narkoba. Sambil membangun kekuatan Grove Street, CJ juga mendukung keluarganya serta teman-temannya, termasuk Big Smoke dan Ryder, yang tampaknya setia pada geng mereka.
+    <div class="story-section fade-in" style="text-align: justify;">
+        <img src="../img/betray.png" alt="Revenge" class="story-image">
+        <p>Namun, CJ dikhianati oleh teman dekatnya, Big Smoke dan Ryder, yang bersekongkol dengan Tenpenny dan Ballas. Setelah Sweet dipenjara, CJ diusir dari Los Santos dan memulai petualangan baru di pedesaan, San Fierro, dan Las Venturas, membangun koneksi dan memperkuat pengaruhnya.</p>
+    </div>
 
-        CJ bergabung kembali dengan geng dan membantu Sweet merebut wilayah dari Ballas dengan menyerang markas mereka dan menyabotase operasi narkoba. Sambil membangun kekuatan Grove Street, CJ juga mendukung keluarganya serta teman-temannya, termasuk Big Smoke dan Ryder, yang tampaknya setia pada geng
-        <div class="story-section"  style="text-align: justify;">
-            <img src="../img/betray.png" alt="Revenge" class="story-image">
-            <p>Namun, CJ dikhianati oleh teman dekatnya, Big Smoke dan Ryder, yang bersekongkol dengan Tenpenny dan Ballas. Setelah Sweet dipenjara, CJ diusir dari Los Santos dan memulai petualangan baru di pedesaan, San Fierro, dan Las Venturas, membangun koneksi dan memperkuat pengaruhnya.</p>
-        </div>
         </div>
         <div class="slider-container">
         <div class="slider">
@@ -62,6 +62,28 @@
         }
 
         setInterval(moveSlider, 3000); // Pindah setiap 3 detik
+
+        // Function to add 'visible' class when in viewport
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
     </script>
 
 </body>

@@ -12,7 +12,7 @@
     <img src="../img/rockstar.png" alt="R Logo" class="menu-logo" onclick="toggleMenu()">
     <div class="dropdown-menu" id="dropdownMenu">
         <a href="story.php">Story</a>
-        <a href="map.php">map</a>
+        <a href="#map-section">map</a>
         <a href="garage.php">GaraGe</a>
         <a href="weapon.php">Weapon</a>
         <a href="#">Logout</a>
@@ -37,7 +37,7 @@
             <img src="../img/sepeda.png" alt="CJ Bike" class="bike-image">
         </section>
 
-        <section class="map-section">
+        <section class="map-section" id="map-section">
             <section class="map-section">
             <img src="../img/map.png" alt="Map Background" class="map-bg">
             <h2 class="map-title">MAP</h2>

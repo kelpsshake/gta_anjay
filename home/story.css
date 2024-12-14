@@ -19,6 +19,10 @@
     font-style: normal; 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'montserrat-medium';;
     background-color: #000; /* Black background */
@@ -169,6 +173,18 @@ p {
     100% {
         transform: translateX(-1000vw); /* Geser kembali ke awal (mulai looping) */
     }
+}
+/* Fade-in effect */
+.fade-in {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation */
+}
+
+/* Class to make elements visible */
+.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 @media (max-width: 768px) {
