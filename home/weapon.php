@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="weapon.css">
 </head>
 <body>
+<div class="cursor__container">
+        <img src="../cursor/cursor_black.svg" alt="cursor white" class="cursor__border">
+        <img src="../cursor/cursor_white.svg" alt="cursor white" class="cursor__white">
+    </div>
 <a href="home.php" class="back-button">&lt; BACK</a>
     <h1>Weapon</h1>
     <div class="weapon-container">
@@ -104,6 +108,26 @@
             closePopup();
         }
     });
+
+    // Ambil elemen cursor
+const cursorContainer = document.querySelector('.cursor__container');
+const cursorWhite = document.querySelector('.cursor__white');
+
+// Gerakkan cursor mengikuti pointer
+document.addEventListener('mousemove', (event) => {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  cursorContainer.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+});
+
+document.addEventListener('mousedown', () => {
+  cursorWhite.style.filter = 'brightness(0)'; // Ubah jadi hitam
+});
+
+document.addEventListener('mouseup', () => {
+  cursorWhite.style.filter = 'brightness(0) invert(1)'; // Kembali jadi putih
+});
     </script>
 </body>
 </html>

@@ -25,7 +25,7 @@ html {
 
 body {
     font-family: 'montserrat-medium';;
-    background-color: #000; /* Black background */
+    background-color: #000; 
     color: white; 
     margin: 0;
     padding: 20px;
@@ -113,78 +113,68 @@ p {
     border-radius: 10px;
 }
 
-
-        /* Container utama slider */
-        /* Styling untuk slider container */
 .slider-container {
-    width: 95vw; /* Lebar penuh layar */
-    height: 95vh; /* Tinggi penuh layar */
+    width: 95vw; 
+    height: 95vh; 
     overflow: hidden;
     position: relative;
 }
 
-/* Track gambar slider */
+
 .slider {
     display: flex;
-    gap: 30px; /* Jarak antar gambar */
-    width: calc(100vw * 12); /* Lebar 8 gambar */
-    animation: moveLeft 60s linear infinite; /* Animasi bergulir */
+    gap: 30px; 
+    width: calc(100vw * 12); 
+    animation: moveLeft 60s linear infinite; 
 }
 
-/* Gambar dalam slider */
 .slider img {
-    width: 700px; /* Lebar gambar */
-    height: 400px; /* Tinggi gambar */
+    width: 700px; 
+    height: 400px;
     object-fit: cover;
 }
 
-/* Mengatur animasi bergerak ke kiri */
+
 @keyframes moveLeft {
     0% {
-        transform: translateX(0); /* Posisi awal */
+        transform: translateX(0); 
     }
     10% {
-        transform: translateX(-100vw); /* Geser 1 gambar */
+        transform: translateX(-100vw);
     }
     20% {
-        transform: translateX(-200vw); /* Geser 2 gambar */
+        transform: translateX(-200vw); 
     }
     30% {
-        transform: translateX(-300vw); /* Geser 3 gambar */
+        transform: translateX(-300vw); 
     }
     40% {
-        transform: translateX(-400vw); /* Geser 4 gambar */
+        transform: translateX(-400vw); 
     }
     50% {
-        transform: translateX(-500vw); /* Geser 5 gambar */
+        transform: translateX(-500vw); 
     }
     60% {
-        transform: translateX(-600vw); /* Geser 6 gambar */
+        transform: translateX(-600vw);
     }
     70% {
-        transform: translateX(-700vw); /* Geser 7 gambar */
+        transform: translateX(-700vw); 
     }
     80% {
-        transform: translateX(-800vw); /* Geser 8 gambar */
+        transform: translateX(-800vw); 
     }
     90% {
-        transform: translateX(-900vw); /* Geser 9 gambar */
+        transform: translateX(-900vw); 
     }
     100% {
-        transform: translateX(-1000vw); /* Geser kembali ke awal (mulai looping) */
+        transform: translateX(-1000vw); 
     }
 }
-/* Fade-in effect */
-.fade-in {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Move down */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation */
-}
 
-/* Class to make elements visible */
-.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
+.fade-in {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 
 @media (max-width: 768px) {

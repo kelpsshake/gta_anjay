@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="story.css">
 </head>
 <body>
+    
 <div class="story-section1 fade-in">
         <p class="title">Francis INTL. Airport, <br>Liberty City, 1992.</p>
         <img src="../img/gta.gif" alt="Airport" class="story-gif fade-in">

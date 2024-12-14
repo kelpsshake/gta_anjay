@@ -34,6 +34,8 @@ body {
     padding: 0;
     background-color: #7b0a2a;
     min-height: 100vh;
+    cursor: url('../cursor/cursor_white.svg') 16 16, auto;
+    cursor: none;
 }
 
 .header {
@@ -50,6 +52,33 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+}
+
+.cursor__container {
+    position: fixed;
+    width: 5rem; /* Ukuran kursor */
+    height: 5rem;
+    pointer-events: none; /* Agar tidak mengganggu interaksi elemen lain */
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Pastikan selalu di atas */
+}
+
+.cursor__border {
+    position: absolute;
+    width: 105%; /* Lebih besar sedikit untuk efek border */
+    height: 105%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Border di belakang */
+}
+
+.cursor__white {
+    position: absolute;
+    width: 100%; /* Ukuran normal */
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Ikon utama di depan */
 }
 
 .gta-logo {
