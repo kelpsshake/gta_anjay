@@ -8,15 +8,25 @@
 </head>
 <body>
     <img src="../img/atas.png" alt="Texture1" class="texture1">
-    <img src="../img/rockstar.png" alt="Rockstar Logo" class="rockstar-logo">
+    <div class="menu-container">
+    <img src="../img/rockstar.png" alt="R Logo" class="menu-logo" onclick="toggleMenu()">
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="story.php">Story</a>
+        <a href="map.php">map</a>
+        <a href="garage.php">GaraGe</a>
+        <a href="weapon.php">Weapon</a>
+        <a href="#">Logout</a>
+    </div>
+</div>
+
     <header class="header">
         <img src="../img/bingkai.png" alt="GTA San Andreas" class="bingkai">
         <img src="../img/gta_nama.png" alt="GTA Logo" class="gta-logo">
-        <div class="press-start"><a href="#" style="color: #FFFFFF; text-decoration: none;">PRESS START</a></div>
+        <div class="press-start"><a href="#story-section" style="color: #FFFFFF; text-decoration: none;">PRESS START</a></div>
     </header>
 
     <main class="content">
-        <section class="story-section">
+        <section class="story-section" id="story-section">
             <img src="../img/buku2.png" alt="Book Background" class="book-bg">
             <div class="book-content">
                 <h2 class="story-title">CJ's Story</h2>
@@ -24,7 +34,7 @@
                 <p class="story-text">Join CJ's journey in GTA San Andreas! From rebuilding Grove Street to battling betrayals, it's an epic adventure you don't want to miss!</p>
                 <button class="see-more">SEE MORE</button>
             </div>
-            <img src="../img/bike.png" alt="CJ Bike" class="bike-image">
+            <img src="../img/sepeda.png" alt="CJ Bike" class="bike-image">
         </section>
 
         <section class="map-section">
@@ -109,6 +119,41 @@ function prevMap() {
     currentMapIndex = (currentMapIndex - 1 + mapData.length) % mapData.length;
     updateMap(currentMapIndex);
 }
+
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
+
+document.addEventListener("click", (event) => {
+    const menu = document.getElementById("dropdownMenu");
+    const logo = document.querySelector(".menu-logo");
+    if (!menu.contains(event.target) && !logo.contains(event.target)) {
+        menu.style.display = "none";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); 
+                }
+            });
+        });
+
+        
+        const elementsToAnimate = document.querySelectorAll('#story-section, .map-section, .garage-section');
+        elementsToAnimate.forEach((el) => observer.observe(el));
+    });
+
+document.querySelector('.see-more').addEventListener('click', function () {
+window.location.href = 'story.php'; 
+});
 </script>
 
 </body>

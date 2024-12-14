@@ -25,6 +25,9 @@
     font-weight: normal; 
     font-style: normal; 
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -89,7 +92,7 @@ body {
     width: 800px;
     height: 400px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .book-bg {
@@ -104,9 +107,9 @@ body {
 
 .bike-image {
     position: absolute;
-    left: -70px;
-    bottom: -500px;
-    width: 600px;
+    left: 20px;
+    bottom: -580px;
+    width: 500px;
     height: auto;
     z-index: 4;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
@@ -117,18 +120,60 @@ body {
     right: 50px; 
     top: 130%;
     transform: translateY(-50%);
-    z-index: 3; 
+    z-index: 5; 
     padding: 20px 30px;
     text-align: center;
 }
 
-.rockstar-logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: auto;
-    z-index: 999;
+.book-bg, .bike-image {
+    pointer-events: none; /* Agar tidak menghalangi klik */
+}
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+    z-index: 1; /* Pastikan menu container memiliki z-index lebih kecil dari dropdown */
+}
+
+.menu-logo {
+    width: 60px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;; 
+    z-index: 2; 
+}
+
+.dropdown-menu {
+    display: none; 
+    position: fixed; 
+    top: 60px;
+    left: 40px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: -3; 
+    width: 150px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: black;
+    -webkit-text-stroke: 0.3px white;
+    text-decoration: none;
+    font-family: 'pricedow';
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* Tampilkan dropdown menu saat hover */
+.menu-container:hover .dropdown-menu {
+    display: block;
 }
 
 .story-text {
@@ -163,21 +208,23 @@ body {
 
 .see-more {
     display: inline-block;
-    background: #fff;
     color: #000;
-    border: 2px solid #000;
+    border: 2px solid #000; 
     padding: 6px 20px;
     border-radius: 25px;
-    font-family: 'popins-black';
-    font-size: 12px;
+    font-family: 'Cybrpnuk2';
+    font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
-    margin-top: 5px;
+    margin-top: 20px;
+    background: transparent; 
+    transition: all 0.3s ease; 
+    transform: translateX(100px);
 }
 
 .see-more:hover {
-    background: #000;
-    color: #fff;
+    color: #FFA600; 
+    border-color: #FFA600; 
 }
 
 /* Map Section */ 
@@ -185,9 +232,9 @@ body {
 .map-section {
     position: relative;
     width: 800px;
-    margin: 300px auto 0; /* Tingkatkan margin untuk memberikan jarak dari section di atas */
+    margin: 340px auto 0; 
     padding: 40px;
-    z-index: 1; /* Pastikan section ini berada di layer yang lebih rendah */
+    z-index: 1; 
 }
 
 .map-bg {
@@ -196,7 +243,7 @@ body {
     left: 0;
     width: 850px;
     height: 650px;
-    z-index: 0; /* Map background tetap berada paling bawah */
+    z-index: 0; 
 }
 
 .map-title {
@@ -205,7 +252,7 @@ body {
     font-size: 36px;
     color: #000;
     margin-bottom: 30px;
-    z-index: 2; /* Agar teks tetap di atas background */
+    z-index: 2; 
 }
 
 .map-container {
@@ -213,7 +260,7 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
-    z-index: 2; /* Map content juga berada di atas background */
+    z-index: 2; 
 }
 
 .map-content {
@@ -360,3 +407,14 @@ body {
     padding: 20px;
 }
 
+.story-section, .map-section, .garage-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s ease-out;
+}
+
+/* Gaya saat elemen terlihat */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

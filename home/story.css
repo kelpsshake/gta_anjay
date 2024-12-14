@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Cybrpnuk2';
+    src: url('../fonts/Cybrpnuk2.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+body {
+    font-family: 'montserrat-medium';;
+    background-color: #000; /* Black background */
+    color: white; 
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.title{
+    font-size: 40px;
+    font-family: 'montserrat-bold';
+}
+
+.back-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+}
+
+.story-section1 {
+    margin: 20px auto; 
+    text-align: center; 
+    color: white; 
+}
+
+.story-gif {
+    width: 100%; 
+    height: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    margin: 20px 0; 
+}
+
+h1 {
+    font-family: 'montserrat-bold'; 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+}
+
+.story-section {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    text-align: left; 
+    gap: 15px; 
+}
+
+.story-section:nth-child(odd) {
+    flex-direction: row-reverse; 
+}
+
+.story-image {
+    width: 650px; 
+    height: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+p {
+    font-family: 'montserrat-medium'; 
+    font-size: 20px; 
+    line-height: 1.6; 
+    margin: 0; 
+    color: white; 
+}
+
+.story-description {
+    display: block; 
+    font-family: 'montserrat-medium'; 
+    font-size: 20px; 
+    line-height: 1.6; 
+    color: white; 
+    max-width: 600px; 
+    margin: 10px auto 0 auto; 
+    padding: 10px; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px;
+}
+
+
+        /* Container utama slider */
+        /* Styling untuk slider container */
+.slider-container {
+    width: 95vw; /* Lebar penuh layar */
+    height: 95vh; /* Tinggi penuh layar */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track gambar slider */
+.slider {
+    display: flex;
+    gap: 30px; /* Jarak antar gambar */
+    width: calc(100vw * 12); /* Lebar 8 gambar */
+    animation: moveLeft 60s linear infinite; /* Animasi bergulir */
+}
+
+/* Gambar dalam slider */
+.slider img {
+    width: 700px; /* Lebar gambar */
+    height: 400px; /* Tinggi gambar */
+    object-fit: cover;
+}
+
+/* Mengatur animasi bergerak ke kiri */
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0); /* Posisi awal */
+    }
+    10% {
+        transform: translateX(-100vw); /* Geser 1 gambar */
+    }
+    20% {
+        transform: translateX(-200vw); /* Geser 2 gambar */
+    }
+    30% {
+        transform: translateX(-300vw); /* Geser 3 gambar */
+    }
+    40% {
+        transform: translateX(-400vw); /* Geser 4 gambar */
+    }
+    50% {
+        transform: translateX(-500vw); /* Geser 5 gambar */
+    }
+    60% {
+        transform: translateX(-600vw); /* Geser 6 gambar */
+    }
+    70% {
+        transform: translateX(-700vw); /* Geser 7 gambar */
+    }
+    80% {
+        transform: translateX(-800vw); /* Geser 8 gambar */
+    }
+    90% {
+        transform: translateX(-900vw); /* Geser 9 gambar */
+    }
+    100% {
+        transform: translateX(-1000vw); /* Geser kembali ke awal (mulai looping) */
+    }
+}
+
+@media (max-width: 768px) {
+    .story-section {
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .story-section:nth-child(odd) {
+        flex-direction: column; 
+    }
+
+    .story-image {
+        width: 100%; 
+        max-width: 300px; 
+    }
+}
