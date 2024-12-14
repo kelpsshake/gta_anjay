@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" name="register" class="login-btn">REGISTER</button>
 
             <p class="login-text">
-                Already having an account? <a href="login.php">Login Here</a> 
+                Already having an account? <a href="../login.php">Login Here</a> 
             </p>
         </form>
         <?php if ($message): ?>
