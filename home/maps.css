@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'pricedow';
+    src: url('../fonts/pricedow.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Cybrpnuk2';
+    src: url('../fonts/Cybrpnuk2.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'pricedow';
+    margin: 0;
+    padding: 20px;
+}
+
+.back-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-family: 'Cybrpnuk2';
+}
+
+.map-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.map-section {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.map-image.small {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Posisi setiap bagian map */
+#san-fierro {
+    top: 10%;
+    left: 0;
+    width: 40%;
+}
+
+#las-venturas {
+    top: 10%;
+    right: 15%;
+    width: 50%;
+}
+
+#los-santos {
+    bottom: 13%;
+    left: 38%;
+    width: 50%;
+}
+
+/* Hover efek pada gambar */
+.map-section:hover .map-image {
+    transform: scale(1.05);
+    filter: grayscale(100%) sepia(100%) hue-rotate(0deg) saturate(1000%) brightness(0.6);
+}
+
+/* Posisi informasi di bawah masing-masing map-section */
+.map-info {
+    position: absolute;
+    bottom: -120px; /* Jarak lebih besar agar tidak terpotong */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    line-height: 1.5;
+    z-index: 10; /* Pastikan berada di atas elemen lain */
+}
+
+/* Hover efek untuk menampilkan informasi */
+.map-section:hover .map-info {
+    opacity: 1;
+    bottom: 20px; /* Menambahkan efek naik lebih jauh */
+}
+
+.info-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
