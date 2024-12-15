@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../register/db.php';
+include '../db.php';
 
 $message = '';
 
@@ -8,23 +8,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['register'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
 
-        $checkSql = "SELECT * FROM users WHERE username = ? OR email = ?";
-        $checkStmt = $pdo->prepare($checkSql);
-        $checkStmt->execute([$username, $email]);
-        $result = $checkStmt->fetchAll();
-
-        if (count($result) > 0) {
-            $message = "Username atau email sudah ada.";
+        if (strlen($password) < 8 || 
+            !preg_match('/[A-Z]/', $password) || 
+            !preg_match('/[a-z]/', $password) || 
+            !preg_match('/[0-9]/', $password) || 
+            !preg_match('/[\W_]/', $password)) {
+            $message = "Password harus terdiri dari minimal 8 karakter, termasuk huruf besar, huruf kecil, angka, dan karakter khusus.";
+        } elseif ($password !== $confirm_password) {
+            $message = "Password dan konfirmasi password tidak cocok.";
         } else {
-            $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-            $stmt = $pdo->prepare($sql);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            if ($stmt->execute([$username, $email, $password])) {
-                $message = "Selamat $username, Anda telah berhasil mendaftar.";
+            $checkSql = "SELECT * FROM users WHERE username = ? OR email = ?";
+            $checkStmt = $pdo->prepare($checkSql);
+            $checkStmt->execute([$username, $email]);
+            $result = $checkStmt->fetchAll();
+
+            if (count($result) > 0) {
+                $message = "Username atau email sudah ada.";
             } else {
-                $message = "Error: " . $stmt->errorInfo()[2];
+                $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+                $stmt = $pdo->prepare($sql);
+
+                if ($stmt->execute([$username, $email, $hashed_password])) {
+                    $message = "Selamat $username, Anda telah berhasil mendaftar.";
+                } else {
+                    $message = "Error: " . $stmt->errorInfo()[2];
+                }
             }
         }
     }

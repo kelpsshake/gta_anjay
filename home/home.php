@@ -161,11 +161,11 @@ document.querySelector('.see-more').addEventListener('click', function () {
 window.location.href = 'story.php'; 
 });
 
-// Ambil elemen cursor
+
 const cursorContainer = document.querySelector('.cursor__container');
 const cursorWhite = document.querySelector('.cursor__white');
 
-// Gerakkan cursor mengikuti pointer
+
 document.addEventListener('mousemove', (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
