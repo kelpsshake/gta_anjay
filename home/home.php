@@ -21,7 +21,7 @@
         <a href="#map.php">map</a>
         <a href="garage.php">GaraGe</a>
         <a href="weapon.php">Weapon</a>
-        <a href="#">Logout</a>
+        <a href="../depan/depan.php">Logout</a>
     </div>
 </div>
 
