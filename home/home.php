@@ -18,7 +18,7 @@
     <img src="../img/rockstar.png" alt="R Logo" class="menu-logo" onclick="toggleMenu()">
     <div class="dropdown-menu" id="dropdownMenu">
         <a href="story.php">Story</a>
-        <a href="#map-section">map</a>
+        <a href="#map.php">map</a>
         <a href="garage.php">GaraGe</a>
         <a href="weapon.php">Weapon</a>
         <a href="#">Logout</a>
@@ -50,7 +50,7 @@
                 <div class="map-container">
                     <div class="map-content">
                         <button class="nav-button prev" onclick="prevMap()">&lt;</button>
-                            <img src="../img/losantos.png" alt="Map Image" class="map-image" id="mapImage">
+                        <a href="maps.php"><img src="../img/losantos.png" alt="Map Image" class="map-image" id="mapImage"></a>
                         <button class="nav-button next" onclick="nextMap()">&gt;</button>
                     </div>
                     <div class="map-info">
