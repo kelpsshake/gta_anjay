@@ -18,7 +18,7 @@
     <img src="../img/rockstar.png" alt="R Logo" class="menu-logo" onclick="toggleMenu()">
     <div class="dropdown-menu" id="dropdownMenu">
         <a href="story.php">Story</a>
-        <a href="#map.php">map</a>
+        <a href="map.php">map</a>
         <a href="garage.php">GaraGe</a>
         <a href="weapon.php">Weapon</a>
         <a href="../depan/depan.php">Logout</a>
