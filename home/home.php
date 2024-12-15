@@ -167,10 +167,10 @@ const cursorWhite = document.querySelector('.cursor__white');
 
 
 document.addEventListener('mousemove', (event) => {
-  const mouseX = event.clientX;
-  const mouseY = event.clientY;
+const mouseX = event.clientX;
+const mouseY = event.clientY;
 
-  cursorContainer.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+cursorContainer.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 });
 
 document.addEventListener('mousedown', () => {
