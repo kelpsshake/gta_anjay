@@ -177,7 +177,7 @@ th {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    background-color: rgba(87, 14, 14, 0.9); 
+    background-color: rgba(0, 0, 0, 0.9); 
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
@@ -207,7 +207,7 @@ th {
 
 .update-button {
     background-color: #0066ff; 
-    color: white; 
+    color: rgb(0, 0, 0); 
     padding: 10px 15px;
     border: none; 
     border-radius: 5px;
@@ -216,7 +216,7 @@ th {
 }
 
 .update-button:hover {
-    background-color: #45a049; 
+    background-color: #ffffff; 
 }
 
 .close-alert {
